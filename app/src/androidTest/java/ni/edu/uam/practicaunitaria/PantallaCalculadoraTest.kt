@@ -12,18 +12,62 @@ class PantallaCalculadoraTest {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun verificarBotonYResultado() {
-
+    fun verificarBotonSumaYResultado() {
         composeTestRule.setContent {
             PantallaCalculadora()
         }
 
         composeTestRule
-            .onNodeWithText("Calcular")
+            .onNodeWithText("Sumar")
             .performClick()
 
         composeTestRule
             .onNodeWithTag("resultado")
-            .assertTextEquals("10")
+            .assertTextEquals("8")
+    }
+
+    @Test
+    fun verificarBotonRestaYResultado() {
+        composeTestRule.setContent {
+            PantallaCalculadora()
+        }
+
+        composeTestRule
+            .onNodeWithText("Restar")
+            .performClick()
+
+        composeTestRule
+            .onNodeWithTag("resultado")
+            .assertTextEquals("6")
+    }
+
+    @Test
+    fun verificarBotonMultiplicarYResultado() {
+        composeTestRule.setContent {
+            PantallaCalculadora()
+        }
+
+        composeTestRule
+            .onNodeWithText("Multiplicar")
+            .performClick()
+
+        composeTestRule
+            .onNodeWithTag("resultado")
+            .assertTextEquals("15")
+    }
+
+    @Test
+    fun verificarBotonDividirYResultado() {
+        composeTestRule.setContent {
+            PantallaCalculadora()
+        }
+
+        composeTestRule
+            .onNodeWithText("Dividir")
+            .performClick()
+
+        composeTestRule
+            .onNodeWithTag("resultado")
+            .assertTextEquals("5")
     }
 }
